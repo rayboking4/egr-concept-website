@@ -97,65 +97,57 @@ const categories: { id: Category; label: string; icon: string }[] = [
   { id: 'platrerie', label: 'Plâtrerie', icon: 'apartment' },
 ];
 
-function GalleryCard({ project, index }: { project: typeof projects[0]; index: number }) {
+function GalleryCard({ project, index, onClick }: { project: typeof projects[0]; index: number; onClick: () => void }) {
   const [imgError, setImgError] = useState(false);
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.05 });
 
   return (
     <div
       ref={ref}
-      className={`gallery-item rounded-2xl shadow-md cursor-pointer group transition-all duration-500 ${
+      onClick={onClick}
+      className={`gallery-item bg-white rounded-2xl shadow-sm hover:shadow-xl cursor-pointer group transition-all duration-500 flex flex-col ${
         inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
       style={{ transitionDelay: `${(index % 6) * 80}ms` }}
     >
-      <div className="relative overflow-hidden rounded-2xl">
+      {/* Image Area */}
+      <div className="relative overflow-hidden rounded-t-2xl h-56 shrink-0">
         {!imgError ? (
           <img
             src={project.img}
             alt={`${project.title} – EGR Concept ${project.location}`}
-            className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
             onError={() => setImgError(true)}
           />
         ) : (
-          <div className="w-full h-64 bg-navy/20 flex items-center justify-center">
-            <span className="material-icons text-navy/40 text-6xl">image</span>
+          <div className="w-full h-full bg-navy/10 flex items-center justify-center">
+            <span className="material-icons text-navy/30 text-6xl">image</span>
           </div>
         )}
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
-          <div className="text-amber text-xs font-semibold mb-1">{project.label}</div>
-          <div className="text-white font-bold text-sm mb-1">{project.title}</div>
-          <div className="flex items-center gap-1 text-white/70 text-xs">
-            <span className="material-icons text-xs">place</span>
-            {project.location}, Nord-Pas-de-Calais
-          </div>
-          <p className="text-white/70 text-xs mt-2 line-clamp-2">{project.desc}</p>
+        {/* Hover Zoom Overlay */}
+        <div className="absolute inset-0 bg-navy/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <span className="material-icons text-white text-5xl drop-shadow-md">zoom_in</span>
         </div>
 
         {/* Category Badge */}
-        <div className="absolute top-3 left-3">
-          <span className="bg-amber text-navy text-xs font-bold px-3 py-1 rounded-full">
+        <div className="absolute top-4 left-4">
+          <span className="bg-amber text-navy text-xs font-bold px-4 py-1.5 rounded-full shadow-sm">
             {project.label}
-          </span>
-        </div>
-
-        {/* Location */}
-        <div className="absolute top-3 right-3">
-          <span className="bg-navy/80 text-white text-xs px-2.5 py-1 rounded-full flex items-center gap-1">
-            <span className="material-icons text-xs">place</span>
-            {project.location}
           </span>
         </div>
       </div>
 
-      <div className="p-4">
-        <h3 className="font-heading font-bold text-navy text-sm mb-1">{project.title}</h3>
-        <p className="text-charcoal/60 text-xs flex items-center gap-1">
-          <span className="material-icons text-xs text-amber">place</span>
-          {project.location}, Nord-Pas-de-Calais
+      {/* Card Content */}
+      <div className="p-6 flex flex-col grow border border-t-0 border-gray-100 rounded-b-2xl">
+        <h3 className="font-heading font-bold text-navy text-lg mb-2">{project.title}</h3>
+        <p className="text-charcoal/50 text-sm flex items-center gap-1.5 mb-3">
+          <span className="material-icons text-sm">place</span>
+          {project.location}
+        </p>
+        <p className="text-charcoal/70 text-sm leading-relaxed line-clamp-2">
+          {project.desc}
         </p>
       </div>
     </div>
@@ -164,6 +156,8 @@ function GalleryCard({ project, index }: { project: typeof projects[0]; index: n
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState<Category>('tous');
+  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  
   const { ref: heroRef, inView: heroInView } = useInView({ triggerOnce: true });
 
   const filtered = activeCategory === 'tous'
@@ -235,9 +229,15 @@ export default function Gallery() {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filtered.map((project, i) => (
-              <GalleryCard key={project.id} project={project} index={i} />
+              <GalleryCard 
+                key={project.id} 
+                project={project} 
+                index={i} 
+                onClick={() => setSelectedProject(project)} 
+              />
             ))}
           </div>
 
@@ -250,19 +250,16 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* Note about gallery */}
-      <section className="py-10 bg-offwhite">
+      {/* Upload Callout */}
+      <section className="py-10 bg-offwhite border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="bg-white rounded-2xl p-8 shadow-sm">
-            <span className="material-icons text-amber text-4xl mb-4">add_photo_alternate</span>
-            <h2 className="font-heading text-xl font-bold text-navy mb-3">
-              Vos Photos de Chantier
-            </h2>
-            <p className="text-charcoal/70 text-sm leading-relaxed">
-              Cette galerie est régulièrement mise à jour avec nos dernières réalisations dans le Nord. 
-              Pour ajouter vos propres photos de chantiers, remplacez les images dans le dossier 
-              <code className="bg-navy/5 px-2 py-0.5 rounded text-navy font-mono text-xs mx-1">public/gallery/</code> 
-              du projet.
+          <div className="bg-white rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-center gap-4 shadow-sm border border-gray-100">
+            <span className="material-icons text-navy text-3xl">photo_camera</span>
+            <p className="text-charcoal/80 text-sm sm:text-base font-medium">
+              Vous avez des photos de nos chantiers ? Envoyez-les nous pour enrichir notre galerie ! 
+              <a href="mailto:contact@egrconcept.fr" className="text-amber hover:underline ml-1 font-bold">
+                contact@egrconcept.fr
+              </a>
             </p>
           </div>
         </div>
@@ -287,6 +284,57 @@ export default function Gallery() {
           </Link>
         </div>
       </section>
+
+      {/* Modal / Lightbox */}
+      {selectedProject && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4 sm:p-6 backdrop-blur-sm animate-fade-in"
+          onClick={() => setSelectedProject(null)}
+        >
+          <div 
+            className="bg-white rounded-2xl overflow-hidden max-w-4xl w-full max-h-[90vh] flex flex-col relative shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button 
+              onClick={() => setSelectedProject(null)}
+              className="absolute top-4 right-4 z-10 bg-black/50 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black/80 transition-colors"
+            >
+              <span className="material-icons">close</span>
+            </button>
+
+            {/* Image Area */}
+            <div className="w-full h-[40vh] sm:h-[60vh] bg-navy/10 relative shrink-0">
+              <img 
+                src={selectedProject.img} 
+                alt={`${selectedProject.title} – EGR Concept ${selectedProject.location}`} 
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Content Area */}
+            <div className="p-6 sm:p-8 overflow-y-auto">
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-4">
+                <h3 className="font-heading font-bold text-navy text-2xl md:text-3xl">
+                  {selectedProject.title}
+                </h3>
+                <span className="bg-amber text-navy text-sm font-bold px-5 py-2 rounded-full shrink-0">
+                  {selectedProject.label}
+                </span>
+              </div>
+              
+              <p className="text-charcoal/80 text-base leading-relaxed mb-6">
+                {selectedProject.desc}
+              </p>
+              
+              <div className="flex items-center gap-2 text-charcoal/60 text-sm font-medium">
+                <span className="material-icons text-amber text-xl">place</span>
+                {selectedProject.location} – Nord-Pas-de-Calais
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
