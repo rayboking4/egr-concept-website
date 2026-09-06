@@ -7,112 +7,85 @@ type Category = 'tous' | 'renovation' | 'electricite' | 'revetement' | 'peinture
 const projects = [
   {
     id: 1,
-    img: 'https://images.pexels.com/photos/8146336/pexels-photo-8146336.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800',
-    title: 'Rénovation Complète Appartement',
+    img: '/gallery/20200616_095643 (2).jpg',
+    title: 'Rénovation Salon Lumineux',
     location: 'Lille',
     category: 'renovation' as Category,
     label: 'Rénovation intérieure',
-    desc: 'Rénovation intégrale d\'un appartement T3 : électricité, plomberie, revêtements, peinture.',
+    desc: 'Aménagement complet d\'un espace de vie avec parquet massif et décoration soignée.',
   },
   {
     id: 2,
-    img: 'https://images.pexels.com/photos/15798781/pexels-photo-15798781.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800',
-    title: 'Travaux Plâtrerie & Isolation',
+    img: '/gallery/20220401_175624 (1).jpg',
+    title: 'Création Structure & Étagères',
     location: 'Roubaix',
     category: 'platrerie' as Category,
-    label: 'Plâtrerie & Isolation',
-    desc: 'Pose de cloisons en placo, isolation thermique et phonique, faux-plafond.',
+    label: 'Plâtrerie & Agencement',
+    desc: 'Aménagement d\'une boutique avec création de structures sur-mesure et espaces de rangement.',
   },
   {
     id: 3,
-    img: 'https://images.pexels.com/photos/8146330/pexels-photo-8146330.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800',
-    title: 'Pose Parquet & Peinture',
+    img: '/gallery/20220411_104303.jpg',
+    title: 'Agencement Magasin Astral',
     location: 'Tourcoing',
-    category: 'revetement' as Category,
-    label: 'Revêtement de sol',
-    desc: 'Pose de parquet flottant contrecollé et peinture murale dans un salon.',
+    category: 'renovation' as Category,
+    label: 'Aménagement Commercial',
+    desc: 'Rénovation complète de la boutique Astral : mobilier sur-mesure, éclairage et finitions.',
   },
   {
     id: 4,
-    img: 'https://images.pexels.com/photos/8146158/pexels-photo-8146158.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800',
-    title: 'Rénovation Maison Individuelle',
+    img: '/gallery/20240705_092115.jpg',
+    title: 'Installation Cuisine Moderne',
     location: 'Dunkerque',
     category: 'renovation' as Category,
     label: 'Rénovation intérieure',
-    desc: 'Rénovation complète d\'une maison : enduits, revêtements, électricité mise aux normes.',
+    desc: 'Création d\'une cuisine ouverte épurée avec îlot central noir et façades blanches.',
   },
   {
     id: 5,
-    img: 'https://images.pexels.com/photos/7533848/pexels-photo-7533848.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800',
-    title: 'Aménagement Cuisine & Salon',
+    img: '/gallery/20240711_091702.jpg',
+    title: 'Rénovation Salle d\'Eau',
     location: 'Valenciennes',
     category: 'renovation' as Category,
     label: 'Rénovation intérieure',
-    desc: 'Réaménagement complet cuisine ouverte et salon avec revêtements sol unifiés.',
+    desc: 'Aménagement d\'une salle de bain moderne avec meuble suspendu et carrelage grand format.',
   },
   {
     id: 6,
-    img: 'https://images.pexels.com/photos/15798783/pexels-photo-15798783.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800',
-    title: 'Travaux Électricité Mise aux Normes',
+    img: '/gallery/parquet 2.jpg',
+    title: 'Pose de Parquet Stratifié',
     location: 'Douai',
-    category: 'electricite' as Category,
-    label: 'Électricité',
-    desc: 'Mise aux normes NF C 15-100, remplacement tableau électrique et installation complète.',
+    category: 'revetement' as Category,
+    label: 'Revêtement de sol',
+    desc: 'Installation d\'un nouveau parquet dans une grande pièce à vivre lumineuse avec baies vitrées.',
   },
   {
     id: 7,
-    img: 'https://images.pexels.com/photos/8146337/pexels-photo-8146337.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800',
-    title: 'Carrelage & Revêtement Sol',
+    img: '/gallery/IMG-20230113-WA0004 (2).jpg',
+    title: 'Cuisine & Parquet Point de Hongrie',
     location: 'Arras',
     category: 'revetement' as Category,
     label: 'Revêtement de sol',
-    desc: 'Pose de carrelage grand format dans une pièce à vivre avec ragréage préalable.',
+    desc: 'Magnifique parquet posé en point de Hongrie et agencement d\'une cuisine sur-mesure bleue nuit.',
   },
   {
     id: 8,
-    img: 'https://images.pexels.com/photos/8082324/pexels-photo-8082324.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800',
-    title: 'Rénovation Combles & Isolation',
+    img: '/gallery/Electricity and light.jpg',
+    title: 'Faux Plafond Suspendu',
     location: 'Béthune',
-    category: 'platrerie' as Category,
-    label: 'Plâtrerie & Isolation',
-    desc: 'Aménagement de combles perdus en chambre avec isolation et cloisons.',
+    category: 'electricite' as Category,
+    label: 'Électricité & Éclairage',
+    desc: 'Réalisation d\'un faux plafond noir élégant avec intégration architecturale de spots LED.',
   },
   {
     id: 9,
-    img: 'https://images.pexels.com/photos/15798780/pexels-photo-15798780.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800',
-    title: 'Chantier Rénovation Globale',
+    img: '/gallery/parquet.jpg',
+    title: 'Rénovation Salon de Coiffure',
     location: 'Lille',
     category: 'renovation' as Category,
-    label: 'Rénovation intérieure',
-    desc: 'Rénovation globale d\'un local commercial : démolition, reconstruction, finitions.',
-  },
-  {
-    id: 10,
-    img: 'https://images.pexels.com/photos/7031603/pexels-photo-7031603.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800',
-    title: 'Peinture & Enduits Décoratifs',
-    location: 'Roubaix',
-    category: 'peinture' as Category,
-    label: 'Peinture',
-    desc: 'Application d\'enduits décoratifs et peinture mate dans un appartement haussmannien.',
-  },
-  {
-    id: 11,
-    img: 'https://images.pexels.com/photos/8146156/pexels-photo-8146156.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800',
-    title: 'Rénovation Pièce à Vivre',
-    location: 'Tourcoing',
-    category: 'renovation' as Category,
-    label: 'Rénovation intérieure',
-    desc: 'Transformation complète d\'une pièce à vivre : sol, murs, plafond et menuiseries.',
-  },
-  {
-    id: 12,
-    img: 'https://images.pexels.com/photos/5484744/pexels-photo-5484744.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800',
-    title: 'Structure & Charpente Intérieure',
-    location: 'Valenciennes',
-    category: 'renovation' as Category,
-    label: 'Rénovation intérieure',
-    desc: 'Travaux de structure intérieure, création d\'ouvertures et renforcement charpente.',
-  },
+    label: 'Rénovation Commerciale',
+    desc: 'Aménagement de la devanture et rénovation de l\'intérieur du salon de coiffure Fabio Salsa.',
+  }
 ];
 
 const categories: { id: Category; label: string; icon: string }[] = [
@@ -124,57 +97,65 @@ const categories: { id: Category; label: string; icon: string }[] = [
   { id: 'platrerie', label: 'Plâtrerie', icon: 'apartment' },
 ];
 
-function GalleryCard({ project, index, onClick }: { project: typeof projects[0]; index: number; onClick: () => void }) {
+function GalleryCard({ project, index }: { project: typeof projects[0]; index: number }) {
   const [imgError, setImgError] = useState(false);
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.05 });
 
   return (
     <div
       ref={ref}
-      onClick={onClick}
-      className={`gallery-item bg-white rounded-2xl shadow-sm hover:shadow-xl cursor-pointer group transition-all duration-500 flex flex-col ${
+      className={`gallery-item rounded-2xl shadow-md cursor-pointer group transition-all duration-500 ${
         inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
       style={{ transitionDelay: `${(index % 6) * 80}ms` }}
     >
-      {/* Image Area */}
-      <div className="relative overflow-hidden rounded-t-2xl h-56 shrink-0">
+      <div className="relative overflow-hidden rounded-2xl">
         {!imgError ? (
           <img
             src={project.img}
             alt={`${project.title} – EGR Concept ${project.location}`}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
             loading="lazy"
             onError={() => setImgError(true)}
           />
         ) : (
-          <div className="w-full h-full bg-navy/10 flex items-center justify-center">
-            <span className="material-icons text-navy/30 text-6xl">image</span>
+          <div className="w-full h-64 bg-navy/20 flex items-center justify-center">
+            <span className="material-icons text-navy/40 text-6xl">image</span>
           </div>
         )}
 
-        {/* Hover Zoom Overlay */}
-        <div className="absolute inset-0 bg-navy/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <span className="material-icons text-white text-5xl drop-shadow-md">zoom_in</span>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
+          <div className="text-amber text-xs font-semibold mb-1">{project.label}</div>
+          <div className="text-white font-bold text-sm mb-1">{project.title}</div>
+          <div className="flex items-center gap-1 text-white/70 text-xs">
+            <span className="material-icons text-xs">place</span>
+            {project.location}, Nord-Pas-de-Calais
+          </div>
+          <p className="text-white/70 text-xs mt-2 line-clamp-2">{project.desc}</p>
         </div>
 
         {/* Category Badge */}
-        <div className="absolute top-4 left-4">
-          <span className="bg-amber text-navy text-xs font-bold px-4 py-1.5 rounded-full shadow-sm">
+        <div className="absolute top-3 left-3">
+          <span className="bg-amber text-navy text-xs font-bold px-3 py-1 rounded-full">
             {project.label}
+          </span>
+        </div>
+
+        {/* Location */}
+        <div className="absolute top-3 right-3">
+          <span className="bg-navy/80 text-white text-xs px-2.5 py-1 rounded-full flex items-center gap-1">
+            <span className="material-icons text-xs">place</span>
+            {project.location}
           </span>
         </div>
       </div>
 
-      {/* Card Content */}
-      <div className="p-6 flex flex-col grow border border-t-0 border-gray-100 rounded-b-2xl">
-        <h3 className="font-heading font-bold text-navy text-lg mb-2">{project.title}</h3>
-        <p className="text-charcoal/50 text-sm flex items-center gap-1.5 mb-3">
-          <span className="material-icons text-sm">place</span>
-          {project.location}
-        </p>
-        <p className="text-charcoal/70 text-sm leading-relaxed line-clamp-2">
-          {project.desc}
+      <div className="p-4">
+        <h3 className="font-heading font-bold text-navy text-sm mb-1">{project.title}</h3>
+        <p className="text-charcoal/60 text-xs flex items-center gap-1">
+          <span className="material-icons text-xs text-amber">place</span>
+          {project.location}, Nord-Pas-de-Calais
         </p>
       </div>
     </div>
@@ -183,8 +164,6 @@ function GalleryCard({ project, index, onClick }: { project: typeof projects[0];
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState<Category>('tous');
-  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
-  
   const { ref: heroRef, inView: heroInView } = useInView({ triggerOnce: true });
 
   const filtered = activeCategory === 'tous'
@@ -256,15 +235,9 @@ export default function Gallery() {
             </span>
           </div>
 
-          {/* Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {filtered.map((project, i) => (
-              <GalleryCard 
-                key={project.id} 
-                project={project} 
-                index={i} 
-                onClick={() => setSelectedProject(project)} 
-              />
+              <GalleryCard key={project.id} project={project} index={i} />
             ))}
           </div>
 
@@ -277,16 +250,19 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* Upload Callout */}
-      <section className="py-10 bg-offwhite border-t border-gray-100">
+      {/* Note about gallery */}
+      <section className="py-10 bg-offwhite">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="bg-white rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-center gap-4 shadow-sm border border-gray-100">
-            <span className="material-icons text-navy text-3xl">photo_camera</span>
-            <p className="text-charcoal/80 text-sm sm:text-base font-medium">
-              Vous avez des photos de nos chantiers ? Envoyez-les nous pour enrichir notre galerie ! 
-              <a href="mailto:contact@egrconcept.fr" className="text-amber hover:underline ml-1 font-bold">
-                contact@egrconcept.fr
-              </a>
+          <div className="bg-white rounded-2xl p-8 shadow-sm">
+            <span className="material-icons text-amber text-4xl mb-4">add_photo_alternate</span>
+            <h2 className="font-heading text-xl font-bold text-navy mb-3">
+              Vos Photos de Chantier
+            </h2>
+            <p className="text-charcoal/70 text-sm leading-relaxed">
+              Cette galerie est régulièrement mise à jour avec nos dernières réalisations dans le Nord. 
+              Pour ajouter vos propres photos de chantiers, remplacez les images dans le dossier 
+              <code className="bg-navy/5 px-2 py-0.5 rounded text-navy font-mono text-xs mx-1">public/gallery/</code> 
+              du projet.
             </p>
           </div>
         </div>
@@ -311,57 +287,6 @@ export default function Gallery() {
           </Link>
         </div>
       </section>
-
-      {/* Modal / Lightbox */}
-      {selectedProject && (
-        <div 
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4 sm:p-6 backdrop-blur-sm animate-fade-in"
-          onClick={() => setSelectedProject(null)}
-        >
-          <div 
-            className="bg-white rounded-2xl overflow-hidden max-w-4xl w-full max-h-[90vh] flex flex-col relative shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close Button */}
-            <button 
-              onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 z-10 bg-black/50 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black/80 transition-colors"
-            >
-              <span className="material-icons">close</span>
-            </button>
-
-            {/* Image Area */}
-            <div className="w-full h-[40vh] sm:h-[60vh] bg-navy/10 relative shrink-0">
-              <img 
-                src={selectedProject.img} 
-                alt={`${selectedProject.title} – EGR Concept ${selectedProject.location}`} 
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Content Area */}
-            <div className="p-6 sm:p-8 overflow-y-auto">
-              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-4">
-                <h3 className="font-heading font-bold text-navy text-2xl md:text-3xl">
-                  {selectedProject.title}
-                </h3>
-                <span className="bg-amber text-navy text-sm font-bold px-5 py-2 rounded-full shrink-0">
-                  {selectedProject.label}
-                </span>
-              </div>
-              
-              <p className="text-charcoal/80 text-base leading-relaxed mb-6">
-                {selectedProject.desc}
-              </p>
-              
-              <div className="flex items-center gap-2 text-charcoal/60 text-sm font-medium">
-                <span className="material-icons text-amber text-xl">place</span>
-                {selectedProject.location} – Nord-Pas-de-Calais
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 }
