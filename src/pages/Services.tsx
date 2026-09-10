@@ -9,7 +9,7 @@ const services = [
     shortTitle: 'Revêtement',
     seoTitle: 'Pose de revêtement de sol et murs à Lille et dans le Nord',
     description:
-      'Expert en pose de revêtements de sol et de murs dans le Nord-Pas-de-Calais, EGR Concept réalise l\'installation de tous types de revêtements avec précision et soin. Du carrelage au parquet, en passant par le stratifié et la faïence, nous garantissons un résultat impeccable.',
+      'Expert en pose de revêtements de sol et de murs dans le Nord-Pas-de-Calais, EGR Concept réalise l\'installation de tous types de revêtements avec précision et soin. Du carrelage, parquet, vinyle, en passant par le stratifié et la faïence, nous garantissons un résultat impeccable.',
     prestations: [
       'Pose de carrelage sol et mur',
       'Parquet massif et contrecollé',
@@ -154,7 +154,6 @@ const services = [
       'Installation de chaudière gaz et fioul',
       'Pompe à chaleur air/eau et air/air',
       'Radiateurs et plancher chauffant',
-      'Entretien annuel de chaudière',
       'Remplacement de chaudière ancienne',
       'Thermostat connecté et programmable',
       'Climatisation réversible',
@@ -244,22 +243,38 @@ export default function Services() {
 
   return (
     <>
-      {/* Page Hero */}
-      <section className="page-hero">
-        <div ref={heroRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Page Hero with Blended Image Background */}
+      <section className="relative bg-navy py-20 lg:py-28 overflow-hidden">
+        {/* Background Key Handover Image with Navy Gradient Blend */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/EGR hand key.jpg"
+            alt="EGR Concept Remise de clés travaux rénovation"
+            className="w-full h-full object-cover object-center opacity-25 mix-blend-luminosity"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/90 via-navy/80 to-navy" />
+        </div>
+
+        <div ref={heroRef} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span
-            className={`text-amber font-semibold text-sm uppercase tracking-widest mb-4 block transition-all duration-700 ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            className={`text-amber font-semibold text-sm uppercase tracking-widest mb-4 block transition-all duration-700 ${
+              heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
           >
             Nos Prestations
           </span>
           <h1
-            className={`font-heading text-4xl md:text-5xl font-bold text-white mb-6 transition-all duration-700 delay-100 ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+            className={`font-heading text-4xl md:text-5xl font-bold text-white mb-6 transition-all duration-700 delay-100 ${
+              heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+            }`}
           >
             Tous Vos Travaux de Rénovation<br />
             dans le <span className="text-amber">Nord-Pas-de-Calais</span>
           </h1>
           <p
-            className={`text-white/70 text-lg max-w-3xl mx-auto transition-all duration-700 delay-200 ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+            className={`text-white/80 text-lg max-w-3xl mx-auto leading-relaxed transition-all duration-700 delay-200 ${
+              heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+            }`}
           >
             Électricité, plomberie, revêtement de sol, peinture, rénovation intérieure, 
             plâtrerie, VMC et chauffage — EGR Concept est votre partenaire unique pour tous vos chantiers.
