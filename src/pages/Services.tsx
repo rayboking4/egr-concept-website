@@ -248,7 +248,7 @@ export default function Services() {
         {/* Background Key Handover Image with Navy Gradient Blend */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/EGR hand key.jpg"
+            src="/EGR hand key.png"
             alt="EGR Concept Remise de clés travaux rénovation"
             className="w-full h-full object-cover object-center opacity-25 mix-blend-luminosity"
           />
