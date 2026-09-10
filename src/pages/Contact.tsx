@@ -311,7 +311,7 @@ export default function Contact() {
             {cities.map((city) => (
               <span
                 key={city}
-                className="inline-flex items-center gap-1.5 bg-white text-navy font-semibold px-4 py-2 rounded-full text-sm shadow-sm hover:bg-amber hover:text-navy transition-all duration-200"
+                className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm border border-white/15 text-white font-medium px-4 py-2 rounded-full text-sm hover:bg-amber hover:text-navy transition-all duration-200"
               >
                 <span className="material-icons text-amber text-sm">place</span>
                 {city}
