@@ -29,7 +29,6 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
 
-    // Create mailto link as fallback (works without backend)
     const mailtoLink = `mailto:contact@egrconcept.fr?subject=${encodeURIComponent(
       `[Contact EGR Concept] ${formData.subject || 'Nouveau message'}`
     )}&body=${encodeURIComponent(
@@ -308,11 +307,11 @@ export default function Contact() {
               Rénovation, électricité, plomberie — EGR Concept intervient dans toutes ces villes et communes environnantes.
             </p>
           </div>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3">
             {cities.map((city) => (
               <span
                 key={city}
-                className="zone-badge bg-white/10 border-white/20 text-white"
+                className="inline-flex items-center gap-1.5 bg-white text-navy font-semibold px-4 py-2 rounded-full text-sm shadow-sm hover:bg-amber hover:text-navy transition-all duration-200"
               >
                 <span className="material-icons text-amber text-sm">place</span>
                 {city}
