@@ -53,7 +53,7 @@ const services = [
 ];
 
 const stats = [
-  { icon: 'emoji_events', value: '10+', label: 'Années d\'expérience' },
+  { icon: 'emoji_events', value: '20+', label: 'Années d\'expérience' },
   { icon: 'check_circle', value: '500+', label: 'Chantiers réalisés' },
   { icon: 'star', value: '100%', label: 'Clients satisfaits' },
   { icon: 'verified', value: 'Assuré', label: 'Décennale & RC Pro' },
@@ -224,6 +224,7 @@ export default function Home() {
               { icon: 'verified', text: 'Artisan Qualifié & Assuré' },
               { icon: 'schedule', text: 'Délais Respectés' },
               { icon: 'workspace_premium', text: 'Garantie de Qualité' },
+              { icon: 'lightbulb', text: 'Conseils' },
             ].map((item) => (
               <div key={item.text} className="flex items-center gap-2 text-white/80 text-sm">
                 <span className="material-icons text-amber text-base">{item.icon}</span>
@@ -339,7 +340,7 @@ export default function Home() {
               </div>
               {/* Floating badge */}
               <div className="absolute -bottom-6 -left-6 bg-amber rounded-2xl p-5 shadow-xl">
-                <div className="font-heading font-bold text-navy text-2xl">10+</div>
+                <div className="font-heading font-bold text-navy text-2xl">20+</div>
                 <div className="text-navy/80 text-sm font-medium">Années d'expérience</div>
               </div>
               <div className="absolute -top-6 -right-6 bg-white rounded-2xl p-4 shadow-xl flex items-center gap-3">
@@ -363,7 +364,8 @@ export default function Home() {
               Notre Zone d'Intervention : Nord & Nord-Pas-de-Calais
             </h2>
             <p className="section-subtitle mx-auto text-center">
-              Électricien, plombier, peintre et rénovateur dans toute la région Nord. 
+              Électricien, plombier, peintre et rénovateur dans toute la région Nord.
+              <br />
               Nous intervenons rapidement sur votre chantier.
             </p>
           </div>
